@@ -4,9 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Snack Station | Restaurant</title>
+<title>Snack Station | Cafe & Restaurant</title>
 
 <style>
+
+:root {
+    --green: #123b2a;
+    --dark-green: #0b241a;
+    --light-green: #eaf1ec;
+    --cream: #f7f4ed;
+    --gold: #c9a96e;
+    --text: #202522;
+    --muted: #747a76;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,246 +30,446 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #222;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.5;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-    min-height: 560px;
-    background:
-        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.68)),
-        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80")
-        center/cover;
+    min-height: 650px;
 
-    color: white;
+    background:
+        linear-gradient(
+            rgba(6, 24, 17, .70),
+            rgba(6, 24, 17, .76)
+        ),
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+    color: white;
+
     padding: 40px 20px;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 650px;
 }
 
+
+/* LOGO */
+
 .logo {
-    width: 90px;
-    height: 90px;
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 28px;
+
+    border: 2px solid var(--gold);
     border-radius: 50%;
-    background: white;
-    margin: 0 auto 25px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #222;
-    font-size: 15px;
+
+    background: rgba(255,255,255,.95);
+
+    color: var(--green);
+
+    font-family: Georgia, serif;
+    font-size: 14px;
     font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* BRAND */
+
+.brand-small {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: #d8c18d;
+    margin-bottom: 12px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 12px;
+    font-family: Georgia, serif;
+
+    font-size: 54px;
+
     letter-spacing: -1px;
+
+    margin-bottom: 12px;
 }
 
-.hero p {
+.hero-subtitle {
     font-size: 18px;
-    opacity: .9;
+
+    color: #e6e6e6;
+
+    letter-spacing: 1px;
 }
+
+
+/* BUTTON */
 
 .hero-buttons {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
-.hero-buttons a {
+.primary-button {
     display: inline-block;
-    padding: 14px 28px;
-    background: white;
-    color: #222;
+
+    padding: 14px 30px;
+
+    background: var(--gold);
+    color: #142219;
+
     text-decoration: none;
+
     border-radius: 30px;
+
     font-weight: bold;
+
+    transition: .25s;
 }
 
-/* INTRO */
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   INTRO
+========================= */
 
 .intro {
+    max-width: 750px;
+
+    margin: auto;
+
     text-align: center;
-    padding: 55px 20px 35px;
+
+    padding: 70px 25px 50px;
+}
+
+.eyebrow {
+    color: var(--green);
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
 }
 
 .intro h2 {
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-family: Georgia, serif;
+
+    font-size: 36px;
+
+    margin-bottom: 16px;
 }
 
 .intro p {
-    max-width: 600px;
-    margin: auto;
-    color: #666;
-    line-height: 1.7;
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    font-size: 16px;
 }
 
-/* POPULAR */
+
+/* =========================
+   POPULAR
+========================= */
 
 .popular {
-    max-width: 850px;
+    max-width: 950px;
+
     margin: auto;
-    padding: 20px;
+
+    padding: 10px 20px 70px;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 25px;
+
+    margin-bottom: 30px;
 }
 
 .section-heading h2 {
-    font-size: 30px;
+    font-family: Georgia, serif;
+
+    font-size: 34px;
 }
 
 .section-heading p {
-    color: #777;
-    margin-top: 6px;
+    color: var(--muted);
+
+    margin-top: 7px;
 }
 
+
+/* CARDS */
+
 .popular-grid {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
 }
 
 .popular-card {
+
     background: white;
+
     border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.07);
+
+    transition: .25s;
+}
+
+.popular-card:hover {
+    transform: translateY(-4px);
 }
 
 .food-photo {
-    height: 170px;
+
+    height: 190px;
+
     background-size: cover;
+
     background-position: center;
 }
 
 .food-info {
-    padding: 15px;
+
+    padding: 17px;
 }
 
 .food-info h3 {
-    font-size: 18px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
 }
 
-.food-info span {
+.food-info p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+.food-price {
+
     display: block;
-    margin-top: 6px;
+
+    margin-top: 9px;
+
+    color: var(--green);
+
     font-weight: bold;
 }
 
-/* MENU */
+
+/* =========================
+   MENU
+========================= */
 
 .menu {
+
     max-width: 850px;
+
     margin: auto;
-    padding: 65px 20px;
+
+    padding: 70px 20px;
 }
 
 .category {
-    margin-bottom: 45px;
+
+    margin-bottom: 48px;
 }
 
 .category-title {
-    font-size: 24px;
+
+    font-family: Georgia, serif;
+
+    font-size: 26px;
+
+    color: var(--green);
+
     padding-bottom: 12px;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 5px;
+
+    border-bottom:
+        2px solid #dfe5e0;
+
+    margin-bottom: 4px;
 }
 
 .menu-item {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
-    gap: 15px;
-    padding: 17px 5px;
-    border-bottom: 1px solid #e2dfda;
+
+    gap: 20px;
+
+    padding: 17px 4px;
+
+    border-bottom:
+        1px solid #e5e1d9;
 }
 
 .item-name {
+
     font-weight: bold;
-    font-size: 17px;
+
+    font-size: 16px;
 }
 
 .item-description {
+
     display: block;
-    color: #888;
+
+    color: var(--muted);
+
     font-size: 13px;
+
     margin-top: 3px;
 }
 
 .item-price {
+
+    color: var(--green);
+
     font-weight: bold;
+
     white-space: nowrap;
 }
 
-/* CONTACT */
+
+/* =========================
+   LOCATION / CONTACT
+========================= */
 
 .contact {
-    background: #202020;
+
+    background: var(--green);
+
     color: white;
+
     text-align: center;
-    padding: 55px 20px;
+
+    padding: 70px 20px;
+}
+
+.contact .eyebrow {
+
+    color: #d8c18d;
 }
 
 .contact h2 {
-    font-size: 30px;
-    margin-bottom: 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
 }
 
 .contact p {
-    color: #ccc;
+
+    color: #dce4df;
+
     margin: 8px 0;
 }
 
 .contact-buttons {
-    margin-top: 25px;
+
+    margin-top: 28px;
 }
 
-.contact-buttons a {
+.contact-button {
+
     display: inline-block;
+
     margin: 5px;
-    padding: 12px 20px;
-    border-radius: 25px;
+
+    padding: 12px 21px;
+
+    border-radius: 30px;
+
     background: white;
-    color: #222;
+
+    color: var(--green);
+
     text-decoration: none;
+
     font-weight: bold;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background: #151515;
-    color: #888;
+
+    background: var(--dark-green);
+
+    color: #9ca9a2;
+
     text-align: center;
-    padding: 18px;
+
+    padding: 20px;
+
     font-size: 13px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
     .hero {
-        min-height: 530px;
+        min-height: 610px;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 43px;
     }
 
-    .hero p {
+    .hero-subtitle {
         font-size: 16px;
     }
 
@@ -267,43 +478,72 @@ footer {
     }
 
     .food-photo {
-        height: 130px;
+        height: 135px;
+    }
+
+    .food-info {
+        padding: 13px;
     }
 
     .food-info h3 {
         font-size: 15px;
     }
 
-    .item-name {
-        font-size: 16px;
+    .food-info p {
+        font-size: 12px;
     }
 
-    .menu-item {
-        padding: 15px 2px;
+    .intro h2 {
+        font-size: 30px;
     }
+
+    .menu {
+        padding-top: 50px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
         <div class="logo">
-            LOGO
+            SNACK<br>
+            STATION
         </div>
 
-        <h1>Snack Station</h1>
+        <div class="brand-small">
+            Cafe • Restaurant
+        </div>
 
-        <p>Good Food • Good Mood</p>
+        <h1>
+            Snack Station
+        </h1>
+
+        <p class="hero-subtitle">
+            Good Food • Good Mood
+        </p>
 
         <div class="hero-buttons">
-            <a href="#menu">View Menu</a>
+
+            <a
+                href="#menu"
+                class="primary-button"
+            >
+                Explore Our Menu
+            </a>
+
         </div>
 
     </div>
@@ -311,329 +551,696 @@ footer {
 </section>
 
 
-<!-- INTRO -->
+
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro">
 
-    <h2>Welcome to Snack Station</h2>
+    <div class="eyebrow">
+        Welcome
+    </div>
+
+    <h2>
+        A Place for Good Food & Good Moments
+    </h2>
 
     <p>
-        Delicious food, refreshing drinks and great moments.
-        Come visit us and enjoy your favourite dishes.
+        From delicious momos and noodles to refreshing
+        drinks and quick bites, Snack Station brings
+        together great taste and a comfortable atmosphere.
     </p>
 
 </section>
 
 
-<!-- POPULAR -->
+
+<!-- =========================
+     POPULAR
+========================= -->
 
 <section class="popular">
 
     <div class="section-heading">
-        <h2>⭐ Popular Choices</h2>
-        <p>Some of our customer favourites</p>
+
+        <div class="eyebrow">
+            Customer Favourites
+        </div>
+
+        <h2>
+            ⭐ Popular Choices
+        </h2>
+
+        <p>
+            A few favourites from our kitchen
+        </p>
+
     </div>
 
 
     <div class="popular-grid">
 
+
+        <!-- CHICKEN MOMO -->
+
         <div class="popular-card">
 
-            <div class="food-photo"
-            style="background-image:url('https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=800&q=80');">
-            </div>
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
 
             <div class="food-info">
-                <h3>Chicken Momo</h3>
-                <span>Rs. 120</span>
+
+                <h3>
+                    Chicken Momo
+                </h3>
+
+                <p>
+                    Juicy steamed dumplings
+                </p>
+
+                <span class="food-price">
+                    Rs. 120
+                </span>
+
             </div>
 
         </div>
 
 
+
+        <!-- LOLLIPOP -->
+
         <div class="popular-card">
 
-            <div class="food-photo"
-            style="background-image:url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80');">
-            </div>
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
 
             <div class="food-info">
-                <h3>Chicken Lollipop</h3>
-                <span>Rs. 250</span>
+
+                <h3>
+                    Chicken Lollipop
+                </h3>
+
+                <p>
+                    Crispy & flavourful
+                </p>
+
+                <span class="food-price">
+                    Rs. 250
+                </span>
+
             </div>
 
         </div>
+
+
+
+        <!-- CHOWMEIN -->
+
+        <div class="popular-card">
+
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
+
+            <div class="food-info">
+
+                <h3>
+                    Chicken Chowmein
+                </h3>
+
+                <p>
+                    Stir-fried noodles
+                </p>
+
+                <span class="food-price">
+                    Rs. 90
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LASSI -->
+
+        <div class="popular-card">
+
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
+
+            <div class="food-info">
+
+                <h3>
+                    Banana Lassi
+                </h3>
+
+                <p>
+                    Cool & refreshing
+                </p>
+
+                <span class="food-price">
+                    Rs. 80
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PANIPURI -->
+
+        <div class="popular-card">
+
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
+
+            <div class="food-info">
+
+                <h3>
+                    Pani Puri
+                </h3>
+
+                <p>
+                    A classic street-food favourite
+                </p>
+
+                <span class="food-price">
+                    Rs. 60
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COFFEE -->
+
+        <div class="popular-card">
+
+            <div
+                class="food-photo"
+                style="
+                background-image:
+                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85');
+                "
+            ></div>
+
+            <div class="food-info">
+
+                <h3>
+                    Milk Coffee
+                </h3>
+
+                <p>
+                    Smooth & comforting
+                </p>
+
+                <span class="food-price">
+                    Rs. 70
+                </span>
+
+            </div>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- MENU -->
+
+<!-- =========================
+     MENU
+========================= -->
 
 <section class="menu" id="menu">
 
+
     <div class="section-heading">
 
-        <h2>Our Menu</h2>
+        <div class="eyebrow">
+            Our Menu
+        </div>
 
-        <p>Freshly prepared for you</p>
+        <h2>
+            Something for Everyone
+        </h2>
+
+        <p>
+            Freshly prepared and served with care
+        </p>
 
     </div>
+
 
 
     <!-- MOMO -->
 
     <div class="category">
 
-        <h3 class="category-title">🥟 Momo</h3>
+        <h3 class="category-title">
+            🥟 Momo
+        </h3>
+
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Chicken Momo</span>
+                <span class="item-name">
+                    Chicken Momo
+                </span>
             </div>
-            <span class="item-price">Rs. 120</span>
+
+            <span class="item-price">
+                Rs. 120
+            </span>
+
         </div>
 
+
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Buff Momo</span>
+                <span class="item-name">
+                    Buff Momo
+                </span>
             </div>
-            <span class="item-price">Rs. 120</span>
+
+            <span class="item-price">
+                Rs. 120
+            </span>
+
         </div>
 
     </div>
+
 
 
     <!-- NOODLES -->
 
     <div class="category">
 
-        <h3 class="category-title">🍜 Noodles</h3>
+        <h3 class="category-title">
+            🍜 Noodles
+        </h3>
+
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Veg Chowmein</span>
+                <span class="item-name">
+                    Veg Chowmein
+                </span>
             </div>
-            <span class="item-price">Rs. 60</span>
+
+            <span class="item-price">
+                Rs. 60
+            </span>
+
         </div>
 
-        <div class="menu-item">
-            <div>
-                <span class="item-name">Egg Chowmein</span>
-            </div>
-            <span class="item-price">Rs. 90</span>
-        </div>
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Chicken Chowmein</span>
+                <span class="item-name">
+                    Egg Chowmein
+                </span>
             </div>
-            <span class="item-price">Rs. 90</span>
+
+            <span class="item-price">
+                Rs. 90
+            </span>
+
         </div>
 
-        <div class="menu-item">
-            <div>
-                <span class="item-name">Buff Chowmein</span>
-            </div>
-            <span class="item-price">Rs. 90</span>
-        </div>
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">WaiWai Noodles with Veggies</span>
+                <span class="item-name">
+                    Chicken Chowmein
+                </span>
             </div>
-            <span class="item-price">Rs. 80</span>
+
+            <span class="item-price">
+                Rs. 90
+            </span>
+
         </div>
 
+
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Current Noodles</span>
+                <span class="item-name">
+                    Buff Chowmein
+                </span>
             </div>
-            <span class="item-price">Rs. 80</span>
+
+            <span class="item-price">
+                Rs. 90
+            </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+            <div>
+                <span class="item-name">
+                    WaiWai Noodles with Veggies
+                </span>
+            </div>
+
+            <span class="item-price">
+                Rs. 80
+            </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+            <div>
+                <span class="item-name">
+                    Current Noodles
+                </span>
+            </div>
+
+            <span class="item-price">
+                Rs. 80
+            </span>
+
         </div>
 
     </div>
+
 
 
     <!-- SNACKS -->
 
     <div class="category">
 
-        <h3 class="category-title">🍗 Snacks</h3>
+        <h3 class="category-title">
+            🍗 Snacks
+        </h3>
+
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Chicken Lollipop</span>
-                <span class="item-description">5 pcs</span>
+                <span class="item-name">
+                    Chicken Lollipop
+                </span>
+
+                <span class="item-description">
+                    5 pcs
+                </span>
             </div>
-            <span class="item-price">Rs. 250</span>
+
+            <span class="item-price">
+                Rs. 250
+            </span>
+
         </div>
 
-        <div class="menu-item">
-            <div>
-                <span class="item-name">Chicken Legpiece</span>
-            </div>
-            <span class="item-price">Rs. 200</span>
-        </div>
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Chatpat</span>
+                <span class="item-name">
+                    Chicken Legpiece
+                </span>
             </div>
-            <span class="item-price">Rs. 60</span>
+
+            <span class="item-price">
+                Rs. 200
+            </span>
+
         </div>
 
-        <div class="menu-item">
-            <div>
-                <span class="item-name">Pani Puri</span>
-            </div>
-            <span class="item-price">Rs. 60</span>
-        </div>
 
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Dahi Puri</span>
+                <span class="item-name">
+                    Chatpat
+                </span>
             </div>
-            <span class="item-price">Rs. 120</span>
+
+            <span class="item-price">
+                Rs. 60
+            </span>
+
         </div>
 
+
         <div class="menu-item">
+
             <div>
-                <span class="item-name">Bread Omelette</span>
+                <span class="item-name">
+                    Pani Puri
+                </span>
             </div>
-            <span class="item-price">Rs. 60</span>
+
+            <span class="item-price">
+                Rs. 60
+            </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+            <div>
+                <span class="item-name">
+                    Dahi Puri
+                </span>
+            </div>
+
+            <span class="item-price">
+                Rs. 120
+            </span>
+
+        </div>
+
+
+        <div class="menu-item">
+
+            <div>
+                <span class="item-name">
+                    Bread Omelette
+                </span>
+            </div>
+
+            <span class="item-price">
+                Rs. 60
+            </span>
+
         </div>
 
     </div>
+
 
 
     <!-- DRINKS -->
 
     <div class="category">
 
-        <h3 class="category-title">🥤 Drinks</h3>
+        <h3 class="category-title">
+            🥤 Drinks
+        </h3>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Plain Lassi</span></div>
-            <span class="item-price">Rs. 70</span>
+            <div>
+                <span class="item-name">
+                    Plain Lassi
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 70
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Banana Lassi</span></div>
-            <span class="item-price">Rs. 80</span>
+            <div>
+                <span class="item-name">
+                    Banana Lassi
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 80
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Black Tea</span></div>
-            <span class="item-price">Rs. 20</span>
+            <div>
+                <span class="item-name">
+                    Black Tea
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 20
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Lemon Tea</span></div>
-            <span class="item-price">Rs. 25</span>
+            <div>
+                <span class="item-name">
+                    Lemon Tea
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 25
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Milk Tea</span></div>
-            <span class="item-price">Rs. 30</span>
+            <div>
+                <span class="item-name">
+                    Milk Tea
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 30
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Black Coffee</span></div>
-            <span class="item-price">Rs. 50</span>
+            <div>
+                <span class="item-name">
+                    Black Coffee
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 50
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Milk Coffee</span></div>
-            <span class="item-price">Rs. 70</span>
+            <div>
+                <span class="item-name">
+                    Milk Coffee
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 70
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Chocolate Milk</span></div>
-            <span class="item-price">Rs. 100</span>
+            <div>
+                <span class="item-name">
+                    Chocolate Milk
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 100
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Mango Drink</span></div>
-            <span class="item-price">Rs. 40</span>
+            <div>
+                <span class="item-name">
+                    Mango Drink
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 40
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Blueberry Drink</span></div>
-            <span class="item-price">Rs. 60</span>
+            <div>
+                <span class="item-name">
+                    Blueberry Drink
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 60
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Limca</span></div>
-            <span class="item-price">Rs. 60</span>
+            <div>
+                <span class="item-name">
+                    Limca
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 60
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Litchi Drink</span></div>
-            <span class="item-price">Rs. 60</span>
+            <div>
+                <span class="item-name">
+                    Litchi Drink
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 60
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Badam Drink</span></div>
-            <span class="item-price">Rs. 120</span>
+            <div>
+                <span class="item-name">
+                    Badam Drink
+                </span>
+            </div>
+            <span class="item-price">
+                Rs. 120
+            </span>
         </div>
+
 
         <div class="menu-item">
-            <div><span class="item-name">Jelly Juice</span></div>
-            <span class="item-price">Rs. 120</span>
-        </div>
-
-        <div class="menu-item">
-            <div><span class="item-name">Orange Juice</span></div>
-            <span class="item-price">Rs. 180</span>
-        </div>
-
-        <div class="menu-item">
-            <div><span class="item-name">Extreme</span></div>
-            <span class="item-price">Rs. 140</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact">
-
-    <h2>Visit Snack Station</h2>
-
-    <p>📍 Chitwan, Nepal</p>
-
-    <p>📞 Call us for orders</p>
-
-    <div class="contact-buttons">
-
-        <a href="tel:+977XXXXXXXXXX">
-            📞 Call
-        </a>
-
-        <a href="https://wa.me/977XXXXXXXXXX">
-            💬 WhatsApp
-        </a>
-
-        <a href="https://instagram.com/">
-            📷 Instagram
-        </a>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    © 2026 Snack Station
-
-</footer>
-
-
-</body>
-    </html>
+            <div>
+                <span class="item-name">
+                    Jelly Juice
+    
